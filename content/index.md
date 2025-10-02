@@ -9,3 +9,4 @@
 
 ## Заметки  
 - [[notes/blockchain_intro]]  
+- [[notes/test]]

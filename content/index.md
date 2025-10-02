@@ -1,6 +1,6 @@
-# OSINT Portfolio  
+# Test
 
-Добро пожаловать в мой OSINT / Threat Intelligence портфель.  
+Добро пожаловать Test портфель.  
 
 ## Кейсы  
 - [[cases/risepro]]  

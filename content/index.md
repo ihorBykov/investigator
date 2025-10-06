@@ -8,4 +8,4 @@
 
 ## 📝 Notes
 - 📊 [[notes/blockchain_intro]]
-- 🕵️ [[notes/Pirrlokk]]
+- 🕵️ [[notes/Pirrlokk-🔍]]

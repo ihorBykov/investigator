@@ -1,12 +1,11 @@
-# Test
 
-Добро пожаловать Test портфель.  
 
-## Кейсы  
-- [[cases/risepro]]  
-- [[cases/filthyStealer]]  
-- [[cases/pigButchering]]  
+# 📑 Index
 
-## Заметки  
-- [[notes/blockchain_intro]]  
-- [[notes/test]]
+## 📂 Cases
+- 🔍 [[cases/risepro]]
+- 🛡️ [[cases/filthyStealer]]
+
+## 📝 Notes
+- 📊 [[notes/blockchain_intro]]
+- 🕵️ [[notes/Pirrlokk]]

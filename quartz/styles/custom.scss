@@ -1,3 +1,32 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table th:first-child {
+  width: 500px;
+}
+
+.folder-outer .meta {
+  display: none !important;
+}
+
+.page-listing .section p.meta,
+.page-listing p.meta,
+li p.meta {
+ display: none !important;
+
+}
+
+
+.paragraph, .page-listing + p {
+  /* Если нужно скрыть текст с количеством элементов */
+}
+
+.page-listing a.internal {
+  display: inline-block !important;
+  white-space: nowrap !important;
+}

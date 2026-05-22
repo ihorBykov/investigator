@@ -17,7 +17,7 @@ Over the past 8 years, I have moved beyond just analyzing data. I build the ecos
 
 ---
 
-### 🚀 Core Pillars of My Expertise
+### Core Pillars of My Expertise
 
 *   **Investigative "Flow":** I specialize in unmasking what is meant to be hidden. From $4.5M internal fraud cases to un-indexed darknet server infrastructures, I find the person behind the data.
 *   **Intelligence Engineering:** I don’t just use tools; I architect them. I have designed KYC/KYB platforms and managed Big Data pipelines processing **3.7B+ records**, focusing on reducing "Time-to-Intel" for the business.
@@ -25,7 +25,7 @@ Over the past 8 years, I have moved beyond just analyzing data. I build the ecos
 *   **Leadership & Mentorship:** I orchestrate teams like a "Lego" set, snapping individual strengths into a solid-state investigative unit. I lead by example, often diving back into the code and the logs to solve the unsolvable.
 
 ---
-## 🛠️ Technical Arsenal
+## Technical Arsenal
 
 ### Blockchain & Crypto Investigations
 - TRM Labs
@@ -54,7 +54,7 @@ Over the past 8 years, I have moved beyond just analyzing data. I build the ecos
 - SAR-oriented evidence preparation
 
 ---
-### 🎯 Current Focus
+## Current Focus
 I am seeking opportunities with Tier-1 Cryptocurrency Exchanges, CTI Vendors, and Fintech leaders to hunt threat actors, recover stolen assets, and build world-class intelligence products.
 
 ---

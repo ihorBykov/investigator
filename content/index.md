@@ -66,4 +66,4 @@ Structured audit for a UK-based organization, identifying critical credential le
 👉 [**Read More**](corporate_leak_audit.md)
 
 ---
-[**About Me**](About.md) | [**LinkedIn**](https://www.linkedin.com/in/ihor-bykov-osint) | [**Personal profile**](personal/professional_profile)
+[**About Me**](about.md) | [**LinkedIn**](https://www.linkedin.com/in/ihor-bykov-osint) | [**Personal profile**](personal/professional_profile)

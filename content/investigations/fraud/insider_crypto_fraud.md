@@ -155,7 +155,7 @@ A critical off-chain linkage was identified:
 - The wallet appeared in a leaked exchanger database  
 - The dataset contained a transaction funded via bank card 
 
- **`[REDECTED]]@yandex.ru` (`Z1**********8`), data leak of service obmen4you.**
+ **`[REDECTED]@yandex.ru` (`Z1**********8`), data leak of service obmen4you.**
 
 **Process:**
 1. Extracted bank card reference  
@@ -243,14 +243,6 @@ High-value consolidation wallets were prioritized to:
 - The identified employee held a privileged anti-fraud role.
 
 > This confirmed insider involvement rather than external compromise.
-
----
-
-## Investigation Limitations
-
-- Multiple exchanges did not respond to legal requests  
-- Some historical transactions were no longer available  
-- Several intermediary wallets could not be conclusively attributed
 
 ---
 

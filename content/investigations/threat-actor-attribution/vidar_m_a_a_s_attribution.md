@@ -1,6 +1,5 @@
 ---
 title: Vidar MaaS Attribution
-
 tags:
   - malware
   - vidar
@@ -10,23 +9,18 @@ tags:
   - threat-intelligence
   - cybercrime
   - osint
-
 type: investigation
 status: completed
 confidence: high
-
 investigation-type:
   - threat-actor-attribution
   - malware-investigations
-
 methodologies:
   - behavioral-attribution
   - infrastructure-artifact-analysis
   - osint-deanonymization
-
 related-notes:
   - operational-security-failures
-
 tools:
   - intelx
   - virustotal
@@ -160,7 +154,7 @@ Key indicators:
 
 Indicators:
 
-- Responded to клиентов
+- Responded to customers
 - Posted updates (2018–2019)
 
 ---
@@ -311,7 +305,7 @@ Attribution is based on:
 
 Combined signals → **high-confidence attribution**
 
-# Threat Actor Role Separation
+## Threat Actor Role Separation
 
 The observed ecosystem demonstrated clear role separation between:
 - product development
@@ -361,7 +355,7 @@ The investigation demonstrates that Vidar is:
 **Final assessment:**  
 Vidar represents a **persistent and scalable cybercrime threat** with strong operational discipline.
 
-## Key Indicators & Infrastructure Artifacts was collected 26-27 of may 2025:
+## Key Indicators & Infrastructure Artifacts were collected on May 26-27, 2025:
   
 ### Distribution Infrastructure  
 - `http://94.159.105.149/12345.txt`  

@@ -189,6 +189,7 @@ At this stage, direct analysis of operational records remained blocked.
 A subsequent forensic image of the platform infrastructure was obtained.
 
 ### Image Characteristics:
+
 - ~975 GB unpacked size
 - full server image
 - web application artifacts
@@ -203,7 +204,7 @@ Priority was given to application-layer artifacts likely to contain operational 
 
 Due to the image size, full indexing timelines were operationally impractical.
 
-Key Investigative Breakthrough
+## Key Investigative Breakthrough
 
 A decision was made to prioritize:
 - manual artifact discovery

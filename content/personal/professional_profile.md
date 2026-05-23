@@ -92,4 +92,5 @@ _Cyberpolice Department | March 2016 – May 2018_
 * **CSI Linux Certified Investigator**
 --- 
 
- [**Personal profile PDF**](personal/professional_profile.pdf)
+ [**Personal profile PDF**](personal/ihor_bykov_cv.pdf)
+ 

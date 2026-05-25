@@ -15,7 +15,7 @@ status: active
 
 **Cybercrime Investigator | Blockchain Intelligence | Ex-Cyberpolice**
 
-Constanța, Romania | ihor.bykov@gmail.com | [LinkedIn Profile](https://www.linkedin.com/in/ihor-bykov-osint/)
+Constanța, Romania | `ihor.bykov@gmail.com` | [LinkedIn Profile](https://www.linkedin.com/in/ihor-bykov-osint/)
 
 ### SUMMARY
 

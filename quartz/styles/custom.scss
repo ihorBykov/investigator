@@ -30,3 +30,51 @@ li p.meta {
   display: inline-block !important;
   white-space: nowrap !important;
 }
+
+.article table,
+article table {
+  width: max-content;
+  min-width: 100%;
+  table-layout: auto;
+}
+
+.article th,
+.article td,
+article th,
+article td {
+  min-width: 140px;
+  overflow-wrap: normal;
+  word-break: normal;
+  vertical-align: top;
+}
+
+.article th:first-child,
+.article td:first-child,
+article th:first-child,
+article td:first-child {
+  min-width: 100px;
+}
+
+
+.zen-drainer-table {
+  overflow-x: auto;
+
+  table {
+    width: max-content;
+    min-width: 100%;
+    table-layout: auto;
+  }
+
+  th,
+  td {
+    min-width: 140px;
+    vertical-align: top;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  th:first-child,
+  td:first-child {
+    min-width: 55px;
+  }
+}

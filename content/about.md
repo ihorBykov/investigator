@@ -1,61 +1,58 @@
 ---
 title: About
 tags:
-  - profile
-  - investigations
   - threat-intelligence
-  - blockchain
   - osint
+  - blockchain-investigations
 type: profile
 status: active
 ---
-### The Hunter Who Builds His Own Tools
+## About
 
-I am a **Senior Intelligence & Investigation Lead** with a unique professional DNA: I combine the "prosecutor’s mindset" of a former **Cyberpolice Officer** with the technical vision of an **Intelligence Architect**.
+### Threat Intelligence & Digital Investigations
 
-Over the past 8 years, I have moved beyond just analyzing data. I build the ecosystems that find it. I thrive in high-ambiguity "Black Box" scenarios where standard automation fails and only a combination of technical forensics and investigative intuition can deliver results.
+I am a cybercrime and blockchain investigations specialist with over eight years of experience spanning law enforcement, private-sector investigations, and threat intelligence.
 
----
+My professional background spans cybercrime investigations, threat intelligence, and intelligence team leadership. Alongside leading investigative and intelligence initiatives, I continue to conduct hands-on investigations involving digital infrastructure, fraud, and blockchain transactions.
 
-### Core Pillars of My Expertise
+Since 2022, I have combined intelligence leadership and product development responsibilities with ongoing hands-on investigations involving cryptocurrency fraud, blockchain tracing, cybercriminal infrastructure, and adversary attribution.
 
-*   **Investigative "Flow":** I specialize in unmasking what is meant to be hidden. From $4.5M internal fraud cases to un-indexed darknet server infrastructures, I find the person behind the data.
-*   **Intelligence Engineering:** I don’t just use tools; I architect them. I have designed KYC/KYB platforms and managed Big Data pipelines processing **3.7B+ records**, focusing on reducing "Time-to-Intel" for the business.
-*   **Adversary Attribution:** Expert in mapping the lifecycle of threat actors across **Ransomware**, **MaaS**, and complex **Hybrid Scam** networks.
-*   **Leadership & Mentorship:** I orchestrate teams like a "Lego" set, snapping individual strengths into a solid-state investigative unit. I lead by example, often diving back into the code and the logs to solve the unsolvable.
+My investigative approach combines on-chain evidence, OSINT, infrastructure analysis, and technical forensics to reconstruct criminal activity, identify connections, and develop evidence-based findings.
 
 ---
-## Technical Arsenal
+### Core Investigative Expertise
 
-### Blockchain & Crypto Investigations
-- TRM Labs
-- MetaSleuth
-- Multi-chain transaction tracing (BTC, ETH, TRON)
-- Wallet attribution & laundering analysis
+**Blockchain & Financial Crime Investigations**
+Multi-chain transaction tracing, wallet attribution, cryptocurrency fraud investigations, laundering patterns, exchange exposure, and cross-chain fund movements.
 
-### OSINT & Attribution
-- Infrastructure pivoting
-- Darknet monitoring
-- Metadata correlation
-- Maltego
-- Identity correlation workflows
+**Cybercrime & Threat Actor Attribution**
+Ransomware investigations, underground ecosystem research, infrastructure correlation, digital evidence analysis, and identification of threat actors through technical and behavioral artifacts.
 
-### Engineering & Automation
-- Python automation & scraping
-- SQL forensics (PostgreSQL)
-- ELK Stack
-- Enrichment pipelines
-- Investigative tooling
+**OSINT & Investigative Intelligence**
+Entity resolution, metadata correlation, darknet research, identity attribution, and the integration of on-chain and off-chain evidence.
 
-### Digital Forensics
-- Large-scale server analysis (1TB+)
-- Application-layer encryption analysis
-- PHP/Python decryption workflows
-- SAR-oriented evidence preparation
+**Investigative Engineering & Automation**
+Development of Python-based investigative tools, API integrations, data enrichment workflows, and large-scale analytical systems supporting complex investigations.
+
+**Intelligence Leadership**
+Experience leading intelligence teams, developing investigative workflows, and building KYC/KYB intelligence platforms while maintaining direct involvement in complex investigations.
 
 ---
-## Current Focus
-I am seeking opportunities with Tier-1 Cryptocurrency Exchanges, CTI Vendors, and Fintech leaders to hunt threat actors, recover stolen assets, and build world-class intelligence products.
+### Technical Capabilities
+
+**Blockchain Intelligence:** TRM Labs, Arkham, Etherscan, TronScan, Bitcoin and EVM explorers, cross-chain and bridge explorers.
+
+**OSINT & Threat Intelligence:** IntelX, Shodan, Lampyre, darknet and Telegram research, infrastructure analysis, metadata correlation.
+
+**Data & Automation:** Python, SQL, PostgreSQL, Elasticsearch/Kibana, REST APIs, investigative automation.
+
+**Digital Forensics:** Linux, forensic artifact analysis, application-layer encryption analysis, large-scale data processing.
 
 ---
-[**Back to Portfolio**](index.md) | [**LinkedIn**](https://www.linkedin.com/in/ihor-bykov-osint/) | [**Personal profile**](personal/professional_profile)
+### Current Investigative Focus
+
+My current work focuses on cryptocurrency fraud, blockchain-enabled cybercrime, drainer operations, ransomware-related financial activity, and the attribution of criminal infrastructure.
+Through OpenIntel, I publish selected investigations, technical findings, and methodologies demonstrating how blockchain analysis, OSINT, and digital forensics can be combined to investigate complex cybercriminal operations.
+
+---
+[**← Back to Investigations**](index.md) | [**LinkedIn**](https://www.linkedin.com/in/ihor-bykov-osint)

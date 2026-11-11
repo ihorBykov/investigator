@@ -1,5 +1,6 @@
 ---
 title: "Zen Drainer — Cross-Chain DaaS Investigation"
+description: "Technical investigation of Zen Drainer's Drainer-as-a-Service infrastructure, smart contracts, revenue-sharing mechanisms, and cross-chain fund flows."
 tags:
   - crypto-drainer
   - phishing

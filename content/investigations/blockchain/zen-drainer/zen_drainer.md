@@ -312,8 +312,9 @@ The observed transaction matched that advertised proportion.
 This does not prove the identities of the recipients, but it provides a meaningful connection between the advertised Zen Drainer business model and the investigated transaction.
 
 ![[Pasted image 20261104003912.png]]
-
 **Figure 12.** Distribution of FLOWER tokens between two receiving addresses, showing the 80/20 split.
+
+[Open full-size diagram](/investigations/blockchain/zen-drainer/graphs/figure_12.png)
 ### 3.4 What the Transaction Tells Us
 
 The transaction provides three important observations.
@@ -323,7 +324,6 @@ Third, the 20% recipient matched an address previously associated with the servi
 Together, these findings support a connection between the reported incident and Zen Drainer's advertised affiliate model.
 However, the transaction alone does not explain how the victim was persuaded to authorize the transfer or which component of the phishing infrastructure initiated the process.
 To investigate those questions, the next step was to examine the phishing website and its JavaScript payload.
-
 # 4. Drainer Payload Analysis
 ### 4.1 From the Victim Report to the Phishing Website
 
@@ -369,6 +369,7 @@ During this analysis, I identified a function named `_0x2f4a02` that interacted 
 Rather than relying on a fixed infrastructure URL embedded directly in the script, the function queried a smart contract to retrieve a value.
 This became the most significant finding from the JavaScript analysis.
 ![[Pasted image 20261027220822.png|507]]
+
 **Figure 15.** Obfuscated JavaScript and the corresponding deobfuscated function showing the BSC RPC interaction.
 ### 4.4 Retrieving Infrastructure Configuration from BSC
 
@@ -396,6 +397,7 @@ curl -X POST https://bsc-rpc.publicnode.com \
 ```
 
 ![[Pasted image 20261027223442.png]]
+
 
 **Figure 16.** BSC `eth_call` request, encoded contract response, and recovered infrastructure URL.
 
@@ -449,9 +451,10 @@ This establishes that the on-chain configuration mechanism existed before the re
 To reconstruct the historical configuration of the backend infrastructure, I examined the `DomainUpdated(string newDomain)` events emitted by the BSC contract.
 
 The examination identified **16 domain update events between February 12 and October 27, 2026**, providing a chronological record of the infrastructure URLs stored through the contract's update mechanism.
-![[Pasted image 20261104184556.png]]
-
+![[Pasted image 20261111160210.png]]
 **Figure 18.** Historical timeline of 16 domain updates recorded by the BSC configuration contract.
+
+[Open full-size diagram](/investigations/blockchain/zen-drainer/graphs/figure_18.png)
 
 The distribution of updates was uneven:
 - **February:** 1 event, corresponding to the initial configuration.
@@ -513,8 +516,9 @@ The commission wallet was identified as `0xF49d21C1De07706808df9b57d8AA65129cCA0
 The FLOWER theft was executed through the SafeProxy contract `0xc25Ee26FC3b62222481765f2732821e2F6344875`.
 
 The transaction used `execTransaction` and a MultiSend operation to execute two ERC-20 `transferFrom` calls. Approximately 80% of the stolen FLOWER tokens were transferred to `0x2B1E3a43C728e7A43804aC153B79717C5881e1c6`, while the remaining 20% were sent to `zendrain[.]eth`.
-![[Pasted image 20261106173945.png]]
-**Figure 19.** Reconstruction of the FLOWER token transfer through SafeProxy and MultiSend.
+![[Pasted image 20261106173945.png]]**Figure 19.** Reconstruction of the FLOWER token transfer through SafeProxy and MultiSend.
+
+[Open full-size diagram](/investigations/blockchain/zen-drainer/graphs/figure_19.png)
 
 Further examination of the same SafeProxy identified six successful distribution operations between September 19 and September 22, 2026, involving ETH, FLOWER, USDC and Gitlawb tokens.
 All six operations were initiated by `0x5aceB19ccc546b8ed39d763e764364115bdfb21a` and followed the same 80/20 distribution model.
@@ -540,6 +544,8 @@ The analysis also identified a primary recipient, `0x0CA967BC…eFDddFc07`, rece
 
 ![[Pasted image 20261108223747.png]]
 **Figure 20.** Identified SafeProxy revenue distribution activity on Base. The illustrated transaction sample should be distinguished from the broader set of 19 identified contracts.
+
+[Open full-size diagram](/investigations/blockchain/zen-drainer/graphs/figure_20.png)
 
 **Interactive Transaction Analysis**
 An interactive transaction graph was prepared to visualize the examined distribution operations, including their execution contracts, primary recipients and the shared Zen Drainer commission wallet.
@@ -607,7 +613,7 @@ The automated audit represented a separate analytical dataset from the initial E
 
 #### 6.2.3. Revenue Distribution Results
 
-The resulting `affiliate_split_audit.csv` contained **106 unique Ethereum transaction hashes** associated with candidate commission distributions, covering the period from December 30, 2025, to October 25, 2026.
+The resulting [`affiliate_split_audit.csv`](/investigations/blockchain/zen-drainer/data/affiliate_split_audit.csv) contained **106 unique Ethereum transaction hashes** associated with candidate commission distributions, covering the period from December 30, 2025, to October 25, 2026.
 
 | Distribution pattern | Transactions |
 | -------------------- | ------------ |
@@ -618,8 +624,9 @@ The resulting `affiliate_split_audit.csv` contained **106 unique Ethereum transa
 | **Total**            | **106**      |
 
 ![[Pasted image 20261109140924.png]]
-
 **Figure 22.** Revenue distribution patterns identified during the preliminary Ethereum Mainnet transaction analysis.
+
+[Open full-size diagram](/investigations/blockchain/zen-drainer/graphs/figure_22.png)
 
 Of the 106 transactions examined, **87 matched one of the three predefined revenue-sharing patterns**, with the 80/20 model accounting for the majority.
 
@@ -683,7 +690,7 @@ The May 21 cross-chain transfer was reconstructed using the source transaction o
 The source transaction on Base (
 `0x9e48cfc435602d240b75cc8cb2185cf819fb54a9662aab697fc7dd761b1677bd`) initiated the cross-chain transfer, while the corresponding Ethereum transaction (`0x33cb5ce416626a44a910a863c16b77191c090e3570774f925523c6c4aea6f73c`) recorded the final receipt of approximately 50,921.42 DAI at the Zen-associated address.
 
-![[Pasted image 20261109172114.png|309]]
+![[Pasted image 20261109172114.png|646]]
 
 **Figure 23.** Symbiosis cross-chain transfer from Base to Ethereum, with DAI received by the same commission address.
 

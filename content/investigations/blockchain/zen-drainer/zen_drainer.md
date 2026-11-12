@@ -41,9 +41,11 @@ The following sections distinguish between third-party intelligence labels, vict
 **Figure 1.** Initial discovery of Zen Drainer through a keyword search in TRM Labs.
 ### 1.2 Identifying a Recurring Blockchain Address
 
-A review of the addresses associated with the Zen Drainer entity identified a recurring EVM address:
-`0xf49d21c1de07706808df9b57d8aa65129cca044d`
-TRM Labs recorded transaction activity across multiple EVM-compatible networks, including Ethereum, Base, BNB Smart Chain, Arbitrum, Polygon, Optimism, Avalanche C-Chain, and Linea.
+A review of addresses associated with the Zen Drainer entity in TRM Labs identified a recurring EVM address: `0xf49d21c1de07706808df9b57d8aa65129cca044d`.
+
+TRM Labs displayed recorded transaction activity for this address across at least 16 EVM-compatible networks, including Ethereum, Base, BNB Smart Chain, Arbitrum, Polygon, Optimism, Avalanche C-Chain, and Linea, among others.
+
+The presence of the same address across multiple networks does not, by itself, establish that all recorded activity is attributable to Zen Drainer operations.
 ![[Pasted image 20261027211713.png]]
 **Figure 2.** Zen Drainer entity and associated blockchain addresses in TRM Labs.
 

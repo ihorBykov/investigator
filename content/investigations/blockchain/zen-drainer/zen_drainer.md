@@ -26,6 +26,32 @@ tools:
   - arkham
   - osint
 ---
+# Executive Summary
+
+**Scope.** This investigation examines Zen Drainer, a Drainer-as-a-Service (DaaS) offering targeting EVM-compatible networks. Starting from a TRM Labs entity lead and a reported phishing incident on Base, the investigation combines OSINT, transaction-level reconstruction, smart contract analysis, JavaScript analysis, Python-assisted transaction auditing, and cross-chain tracing. The analytical cutoff date is November 6, 2026.
+## Key Findings
+
+**Commercial affiliate model.** Zen Drainer was promoted on the Lolz and Exploit forums in May 2026, as well as through a Telegram news channel and support account. Advertised features included 80/20 and 85/15 revenue-sharing models, Permit2 and EIP-7702 support, and automated profit distribution.
+
+_Confidence: High regarding the documented promotional activity. Advertised technical capabilities were not fully independently verified._
+
+**Recurring on-chain revenue distribution.** Transaction-level reconstruction identified a 20% allocation to the recurring recipient address `0xf49d…044d` in a reported Base phishing incident involving approximately $3,000 in FLOWER tokens. The broader Base dataset included 19 SafeProxy contracts. A separate Ethereum audit examined 106 candidate distribution transactions, identifying 83 transactions consistent with an 80/20 split, three with an 85/15 split, and one with a 40/40/20 split. The remaining 19 did not match predefined distribution patterns.
+
+_Confidence: Medium regarding the association with the advertised affiliate model. Distribution ratios alone are not unique attribution indicators; the recurring recipient address provides stronger supporting evidence._
+
+**Dynamic phishing infrastructure.** Analysis of a phishing page revealed a hidden iframe and obfuscated JavaScript retrieving backend configuration from a BNB Smart Chain contract deployed on February 12, 2026. All 17 identified configuration updates originated from the contract deployer address, with 12 occurring in October 2026.
+
+_Confidence: High regarding the observed configuration mechanism._
+
+**Cross-chain fund movements.** Additional tracing identified transfers from Base to Ethereum through Symbiosis, including the conversion of different assets into DAI on the destination network.
+
+_Confidence: High regarding the observed cross-chain movements._
+### Overall Assessment
+
+The combined evidence supports the assessment that the investigated activity is consistent with a commercially organized DaaS ecosystem incorporating dynamic infrastructure configuration, automated revenue distribution, and cross-chain fund movements.
+
+The investigation establishes technical and financial associations between multiple components of this ecosystem. However, it does not establish the real-world identity of its operators, the total number of victims, or the aggregate financial impact of Zen Drainer. Third-party attribution labels and recurring transaction patterns should not be interpreted as conclusive evidence that all associated activity represents phishing proceeds.
+
 # 1. Discovery & Initial Investigative Lead
 ### 1.1 Initial Discovery Through Blockchain Intelligence
 
@@ -500,7 +526,6 @@ During a subsequent HAR capture on November 4, 2026, the same resource path was 
 Both observations share the distinctive path `/365f2332ff15701c52d2/`, establishing reuse of the same URL structure across two infrastructure domains.
 The available evidence does not establish whether this difference resulted from domain rotation, traffic distribution, or another deployment mechanism.
 
-The financial investigation focused on tracing assets transferred from affected wallets, examining the distribution of proceeds, and identifying recurring on-chain patterns associated with the Zen Drainer ecosystem.
 The analysis combined transaction-level reconstruction with a broader review of transfers involving the Zen-associated commission address, `0xf49d21c1de07706808df9b57d8aa65129cca044d` (`zendrain[.]eth`).
 The findings indicate a recurring revenue-sharing structure consistent with the Drainer-as-a-Service (DaaS) model advertised by Zen Drainer. However, the presence of a recurring commission recipient does not, by itself, establish that every associated transaction originated from the same phishing website, affiliate, or victimization campaign.
 
@@ -517,7 +542,7 @@ The commission wallet was identified as `0xF49d21C1De07706808df9b57d8AA65129cCA0
 **Initial Transaction Reconstruction**
 The FLOWER theft was executed through the SafeProxy contract `0xc25Ee26FC3b62222481765f2732821e2F6344875`.
 
-The transaction used `execTransaction` and a MultiSend operation to execute two ERC-20 `transferFrom` calls. Approximately 80% of the stolen FLOWER tokens were transferred to `0x2B1E3a43C728e7A43804aC153B79717C5881e1c6`, while the remaining 20% were sent to `zendrain[.]eth`.
+The transaction used `execTransaction` and a MultiSend operation to execute two ERC-20 `transferFrom` calls. 80% of the stolen FLOWER tokens were transferred to `0x2B1E3a43C728e7A43804aC153B79717C5881e1c6`, while the remaining 20% were sent to `zendrain[.]eth`.
 ![[Pasted image 20261106173945.png]]**Figure 19.** Reconstruction of the FLOWER token transfer through SafeProxy and MultiSend.
 
 [Open full-size diagram](/investigations/blockchain/zen-drainer/graphs/figure_19.png)
@@ -653,11 +678,11 @@ Further examination of the Ethereum transaction audit identified three operation
 All three records identified the same primary proceeds recipient:
 `0xa72be0109274278762d044e609f64d486bf5d274`
 
-| Date        | Transaction Hash                                                                                                                                                                          |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 21 Jul 2026 | [`0x5f7d8cacc91e0512d3806ab7a86815f5d3276fda31ffb9da2182c871193b9a15`](https://etherscan.io/tx/0x5f7d8cacc91e0512d3806ab7a86815f5d3276fda31ffb9da2182c871193b9a15?utm_source=chatgpt.com) |
-| 28 Jul 2026 | [`0x6a3d4cf73520dfad819867966cfbca439213aa033b3efc0bf087733ff37e077f`](https://etherscan.io/tx/0x6a3d4cf73520dfad819867966cfbca439213aa033b3efc0bf087733ff37e077f?utm_source=chatgpt.com) |
-| 23 Aug 2026 | [`0x48e52da7da160f3801160de1917ea80beb6be1fd362e20bbf2d3ed2868eda206`](https://etherscan.io/tx/0x48e52da7da160f3801160de1917ea80beb6be1fd362e20bbf2d3ed2868eda206?utm_source=chatgpt.com) |
+| Date        | Transaction Hash                                                                                                                                                   |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 21 Jul 2026 | [`0x5f7d8cacc91e0512d3806ab7a86815f5d3276fda31ffb9da2182c871193b9a15`](https://etherscan.io/tx/0x5f7d8cacc91e0512d3806ab7a86815f5d3276fda31ffb9da2182c871193b9a15) |
+| 28 Jul 2026 | [`0x6a3d4cf73520dfad819867966cfbca439213aa033b3efc0bf087733ff37e077f`](https://etherscan.io/tx/0x6a3d4cf73520dfad819867966cfbca439213aa033b3efc0bf087733ff37e077f) |
+| 23 Aug 2026 | [`0x48e52da7da160f3801160de1917ea80beb6be1fd362e20bbf2d3ed2868eda206`](https://etherscan.io/tx/0x48e52da7da160f3801160de1917ea80beb6be1fd362e20bbf2d3ed2868eda206) |
 
 The recurrence of this address across separate transactions, combined with a consistent 85/15 distribution ratio, suggests a potentially recurring proceeds destination associated with the examined activity.
 This pattern is also consistent with the alternative commission arrangement described in Zen Drainer promotional material, although the observed transactions do not independently establish the recipient's affiliate status.
@@ -767,27 +792,27 @@ The subsequent disposition of the consolidated funds was not conclusively establ
 
 ## 7.4. Representative Transaction Evidence
 
-|Network|Transaction|Relevance|
-|---|---|---|
-|Base|[`0xe58fced64c0f4fede2b8ffe59b0cd04c0de83eef52e4ce99018edada71e0d81f`](https://basescan.org/tx/0xe58fced64c0f4fede2b8ffe59b0cd04c0de83eef52e4ce99018edada71e0d81f)|FLOWER distribution via Safe/MultiSend|
-|Base|[`0xb739cd0c861d1fdd3b58a8486f901ed0742134cac408ceda38c409a9632eaec0`](https://basescan.org/tx/0xb739cd0c861d1fdd3b58a8486f901ed0742134cac408ceda38c409a9632eaec0)|Additional ERC-20 split in the six-operation sample|
-|Base|[`0x5a07ea1f639e9c5ae59c67d52397148e6d0c0755566801ee6e1e42f64e359236`](https://basescan.org/tx/0x5a07ea1f639e9c5ae59c67d52397148e6d0c0755566801ee6e1e42f64e359236)|Native ETH 80/20 distribution|
-|Base|[`0x3ce2440ff43331905e9cead5d690a1737f1ddcbe7a822c23db300155b3fcec16`](https://basescan.org/tx/0x3ce2440ff43331905e9cead5d690a1737f1ddcbe7a822c23db300155b3fcec16)|Native ETH 80/20 distribution|
-|Base|[`0x04a6076dcd53632af7f9476c6a7bc7ea1955f84cb6492ca6970db73705ad45c8`](https://basescan.org/tx/0x04a6076dcd53632af7f9476c6a7bc7ea1955f84cb6492ca6970db73705ad45c8)|Native ETH 80/20 distribution|
-|Base|[`0xe4d23072504be414e63930763be651de0c6578f252e07cc25cfa81c75a3b1513`](https://basescan.org/tx/0xe4d23072504be414e63930763be651de0c6578f252e07cc25cfa81c75a3b1513)|Native ETH 80/20 distribution|
-|Ethereum|[`0x8fd41e408a0b2ffbbdb8d66e096a726823ba02cab48cca566f722d4cb62360f9`](https://etherscan.io/tx/0x8fd41e408a0b2ffbbdb8d66e096a726823ba02cab48cca566f722d4cb62360f9)|Safe/MultiSend/Permit2 execution|
-|Ethereum|[`0x5f7d8cacc91e0512d3806ab7a86815f5d3276fda31ffb9da2182c871193b9a15`](https://etherscan.io/tx/0x5f7d8cacc91e0512d3806ab7a86815f5d3276fda31ffb9da2182c871193b9a15)|85/15 classification, 21 July 2026|
-|Ethereum|[`0x6a3d4cf73520dfad819867966cfbca439213aa033b3efc0bf087733ff37e077f`](https://etherscan.io/tx/0x6a3d4cf73520dfad819867966cfbca439213aa033b3efc0bf087733ff37e077f)|85/15 classification, 28 July 2026|
-|Ethereum|[`0x48e52da7da160f3801160de1917ea80beb6be1fd362e20bbf2d3ed2868eda206`](https://etherscan.io/tx/0x48e52da7da160f3801160de1917ea80beb6be1fd362e20bbf2d3ed2868eda206)|85/15 classification, 23 August 2026|
+| Network  | Transaction                                                                                                                                                        | Relevance                                           |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------- |
+| Base     | [`0xe58fced64c0f4fede2b8ffe59b0cd04c0de83eef52e4ce99018edada71e0d81f`](https://basescan.org/tx/0xe58fced64c0f4fede2b8ffe59b0cd04c0de83eef52e4ce99018edada71e0d81f) | FLOWER distribution via Safe/MultiSend              |
+| Base     | [`0xb739cd0c861d1fdd3b58a8486f901ed0742134cac408ceda38c409a9632eaec0`](https://basescan.org/tx/0xb739cd0c861d1fdd3b58a8486f901ed0742134cac408ceda38c409a9632eaec0) | Additional ERC-20 split in the six-operation sample |
+| Base     | [`0x5a07ea1f639e9c5ae59c67d52397148e6d0c0755566801ee6e1e42f64e359236`](https://basescan.org/tx/0x5a07ea1f639e9c5ae59c67d52397148e6d0c0755566801ee6e1e42f64e359236) | Native ETH 80/20 distribution                       |
+| Base     | [`0x3ce2440ff43331905e9cead5d690a1737f1ddcbe7a822c23db300155b3fcec16`](https://basescan.org/tx/0x3ce2440ff43331905e9cead5d690a1737f1ddcbe7a822c23db300155b3fcec16) | Native ETH 80/20 distribution                       |
+| Base     | [`0x04a6076dcd53632af7f9476c6a7bc7ea1955f84cb6492ca6970db73705ad45c8`](https://basescan.org/tx/0x04a6076dcd53632af7f9476c6a7bc7ea1955f84cb6492ca6970db73705ad45c8) | Native ETH 80/20 distribution                       |
+| Base     | [`0xe4d23072504be414e63930763be651de0c6578f252e07cc25cfa81c75a3b1513`](https://basescan.org/tx/0xe4d23072504be414e63930763be651de0c6578f252e07cc25cfa81c75a3b1513) | Native ETH 80/20 distribution                       |
+| Ethereum | [`0x8fd41e408a0b2ffbbdb8d66e096a726823ba02cab48cca566f722d4cb62360f9`](https://etherscan.io/tx/0x8fd41e408a0b2ffbbdb8d66e096a726823ba02cab48cca566f722d4cb62360f9) | Safe/MultiSend/Permit2 execution                    |
+| Ethereum | [`0x5f7d8cacc91e0512d3806ab7a86815f5d3276fda31ffb9da2182c871193b9a15`](https://etherscan.io/tx/0x5f7d8cacc91e0512d3806ab7a86815f5d3276fda31ffb9da2182c871193b9a15) | 85/15 classification, 21 July 2026                  |
+| Ethereum | [`0x6a3d4cf73520dfad819867966cfbca439213aa033b3efc0bf087733ff37e077f`](https://etherscan.io/tx/0x6a3d4cf73520dfad819867966cfbca439213aa033b3efc0bf087733ff37e077f) | 85/15 classification, 28 July 2026                  |
+| Ethereum | [`0x48e52da7da160f3801160de1917ea80beb6be1fd362e20bbf2d3ed2868eda206`](https://etherscan.io/tx/0x48e52da7da160f3801160de1917ea80beb6be1fd362e20bbf2d3ed2868eda206) | 85/15 classification, 23 August 2026                |
 
 **Cross-chain pairs (Symbiosis, Base → Ethereum):**
 
-|Date|Base source transaction|Ethereum destination transaction|Asset conversion|
-|---|---|---|---|
-|21 May 2026|[`0x9e48cfc435…761b1677bd`](https://basescan.org/tx/0x9e48cfc435602d240b75cc8cb2185cf819fb54a9662aab697fc7dd761b1677bd)|[`0x33cb5ce416…4aea6f73c`](https://etherscan.io/tx/0x33cb5ce416626a44a910a863c16b77191c090e3570774f925523c6c4aea6f73c)|51,082.0794 USDC → 50,921.4168 DAI|
-|31 May 2026|[`0x3ea2c7a66f…272c3443b`](https://basescan.org/tx/0x3ea2c7a66f2c9e8a402ae87aad0fd0f75194f8724b7fb42d11b68bc272c3443b)|Destination hash retained in bridge screenshot; full value not transcribed|2.0900 ETH → 4,228.5045 DAI|
-|11 Jun 2026|[`0x85526e86ed…628330b`](https://basescan.org/tx/0x85526e86ed4476155f7de6b9ae809d946632ba2ed63a8fb1a25e435ae628330b)|Destination hash retained in bridge screenshot; full value not transcribed|7.4869 WETH → 11,941.6326 DAI|
-|11 Jun 2026|[`0xeb07d110b5…3124f09`](https://basescan.org/tx/0xeb07d110b57f882eb5b4f87de588490d1358434462bebe14a1e80a9103124f09)|Destination hash retained in bridge screenshot; full value not transcribed|5,131.4039 USDC → 5,017.6669 DAI|
+| Date        | Base source transaction                                                                                                 | Ethereum destination transaction                                                                                       | Asset conversion                   |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| 21 May 2026 | [`0x9e48cfc435…761b1677bd`](https://basescan.org/tx/0x9e48cfc435602d240b75cc8cb2185cf819fb54a9662aab697fc7dd761b1677bd) | [`0x33cb5ce416…4aea6f73c`](https://etherscan.io/tx/0x33cb5ce416626a44a910a863c16b77191c090e3570774f925523c6c4aea6f73c) | 51,082.0794 USDC → 50,921.4168 DAI |
+| 31 May 2026 | [`0x3ea2c7a66f…272c3443b`](https://basescan.org/tx/0x3ea2c7a66f2c9e8a402ae87aad0fd0f75194f8724b7fb42d11b68bc272c3443b)  | Destination hash retained in bridge screenshot                                                                         | 2.0900 ETH → 4,228.5045 DAI        |
+| 11 Jun 2026 | [`0x85526e86ed…628330b`](https://basescan.org/tx/0x85526e86ed4476155f7de6b9ae809d946632ba2ed63a8fb1a25e435ae628330b)    | Destination hash retained in bridge screenshot                                                                         | 7.4869 WETH → 11,941.6326 DAI      |
+| 11 Jun 2026 | [`0xeb07d110b5…3124f09`](https://basescan.org/tx/0xeb07d110b57f882eb5b4f87de588490d1358434462bebe14a1e80a9103124f09)    | Destination hash retained in bridge screenshot                                                                         | 5,131.4039 USDC → 5,017.6669 DAI   |
 
 **Additional bridge observation**
 

@@ -67,7 +67,7 @@ A masterclass in OSINT, pivoting from shadow forums to legitimate business entit
 ### 9. Corporate Leak Audit | External Attack Surface
 Structured audit for a UK-based organization, identifying critical credential leaks and establishing monitoring cycles.
 
-*Temporarily unavailable — confidentiality review.*
+*Private case study*
 
 ---
 [**About Me**](about.md) | [**LinkedIn**](https://www.linkedin.com/in/ihor-bykov-osint)

@@ -26,7 +26,7 @@ I combine hands-on investigative work with experience leading intelligence teams
 ### 2. **Insider Crypto Fraud Investigation**
 Multi-year financial investigation involving blockchain tracing, wallet clustering and on-chain/off-chain correlation.
 
-*Temporarily unavailable — confidentiality review.*
+*Private case study*
 
 ### 3. Phobos Ransomware | SQL-to-Blockchain Attribution
 **The Challenge:** Attribute physical identities to ransomware wallets using a decrypted 3rd-party exchange database.
@@ -43,7 +43,7 @@ Multi-year financial investigation involving blockchain tracing, wallet clusteri
 ### 5. **Threat Actor Attribution — Afanasiy**
 Multi-source intelligence correlation and threat actor attribution.
 
-*Temporarily unavailable — confidentiality review.*
+*Private case study*
 
 ---
 ## Threat Research & OSINT
@@ -59,7 +59,7 @@ Analysis of multi-chain laundering models using TRON for distribution and Bitcoi
 ### 8. Deanonymization of "Pirrlokk" | 12-Year Digital Footprint
 A masterclass in OSINT, pivoting from shadow forums to legitimate business entities and physical identity.
 
-*Temporarily unavailable — confidentiality review.*
+*Private case study*
 
 ---
 ## Intelligence Operations

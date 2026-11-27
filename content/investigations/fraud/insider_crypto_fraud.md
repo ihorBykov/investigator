@@ -1,6 +1,6 @@
 ---
 title: $4.5M Insider Crypto Fraud Investigation
-
+draft: true
 tags:
   - blockchain-investigations
   - insider-threat
@@ -12,24 +12,19 @@ tags:
   - osint
   - attribution
   - fraud
-
 type: investigation
 status: completed
 confidence: high
-
 investigation-type:
   - blockchain-investigations
   - fraud-investigations
-
 methodologies:
   - wallet-attribution
   - behavioral-attribution
   - infrastructure-artifact-analysis
-
 related-notes:
   - operational-security-failures
   - tron-laundering-observations
-
 tools:
   - trm-labs
   - arkham

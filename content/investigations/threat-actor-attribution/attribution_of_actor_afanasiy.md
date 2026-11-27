@@ -20,6 +20,7 @@ tools:
   - intelx
   - telegram
   - python
+draft: true
 ---
 ## Executive Summary
 

@@ -1,28 +1,24 @@
 ---
 title: Attribution of Actor "Pirrlokk"
-
 tags:
   - threat-actor
   - attribution
   - osint
   - underground-forums
   - deanonymization
-
 type: investigation
 status: completed
 confidence: medium
-
 investigation-type:
   - threat-actor-attribution
-
 methodologies:
   - behavioral-attribution
   - osint-deanonymization
-
 tools:
   - maltego
   - telegram
   - intelx
+draft: true
 ---
 ## Executive Summary
 

@@ -55,16 +55,12 @@ The investigation establishes technical and financial associations between multi
 # 1. Discovery & Initial Investigative Lead
 ### 1.1 Initial Discovery Through Blockchain Intelligence
 
-The investigation began with a broad search for the keyword `drainer` in TRM Labs entity search interface. Among the returned results, an entity named **Zen Drainer** appeared as the first match, classified under the _Malware_ category.
+The investigation began with a broad keyword search for `drainer` using a blockchain intelligence platform. Among the returned results, an entity named **Zen Drainer** appeared as the first match, classified by the platform under the _Malware_ category.
 
-Rather than starting from a known phishing website or a previously published technical report, the research followed an on-chain intelligence lead. The initial entity discovery provided a starting point for examining blockchain addresses associated with the Zen Drainer label.
+Rather than starting from a known phishing website or a previously published technical report, the research followed an on-chain intelligence lead. The addresses associated with the Zen Drainer label served as initial investigative leads for subsequent blockchain analysis, infrastructure mapping, and OSINT research.
+![[Pasted image 20261127175428.png]]
 
-The investigation subsequently identified a victim complaint referencing a suspicious blockchain transaction and a phishing domain. These two artifacts established the initial scope of the research: reconstructing the reported attack, examining the underlying drainer mechanism, and tracing the associated financial activity.
-
-The following sections distinguish between third-party intelligence labels, victim-reported information, and findings independently verified through blockchain records and technical artifacts.
-![[Pasted image 20261027172048.png|355]]
-
-**Figure 1.** Initial discovery of Zen Drainer through a keyword search in TRM Labs.
+**Figure 1.** Initial discovery of Zen Drainer through keyword-based entity search, followed by its selection as a target for on-chain and OSINT investigation.
 ### 1.2 Identifying a Recurring Blockchain Address
 
 A review of addresses associated with the Zen Drainer entity in TRM Labs identified a recurring EVM address: `0xf49d21c1de07706808df9b57d8aa65129cca044d`.
@@ -72,8 +68,8 @@ A review of addresses associated with the Zen Drainer entity in TRM Labs identif
 TRM Labs displayed recorded transaction activity for this address across at least 16 EVM-compatible networks, including Ethereum, Base, BNB Smart Chain, Arbitrum, Polygon, Optimism, Avalanche C-Chain, and Linea, among others.
 
 The presence of the same address across multiple networks does not, by itself, establish that all recorded activity is attributable to Zen Drainer operations.
-![[Pasted image 20261027211713.png]]
-**Figure 2.** Zen Drainer entity and associated blockchain addresses in TRM Labs.
+![[Zen Drainer — Transaction Volume by Network.svg]]
+**Figure 2.** Gross transaction volume of the identified Zen Drainer wallet across the top 10 of 22 networks, as of November 24, 2026. Figures represent combined incoming and outgoing transfers, not unique stolen funds.
 
 Further examination of public blockchain explorers revealed additional identifiers associated with the address:
 - **ENS name:** `zendrain[.]eth`
